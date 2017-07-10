@@ -43,6 +43,7 @@ a.developer {
 	background-size : 89px 12px;
 	color : inherit;
 	padding : 0 100px 0 0;
+	white-space : nowrap;
 	}
 	
 div.container {

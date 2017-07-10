@@ -12,16 +12,34 @@ footer {
 	}
 	
 footer > div.copyright { position : relative; }
-	
-footer > div.copyright > span { 
-	display : inline-block;
-	font-weight : 400;
-	font-size : 14px;
-	font-family : 'GothamPro', Arial, Tahoma, Verdana, sans-serif;
-	text-align : center;
+
+footer > div.copyright > ul {
+	display : flex;
+	justify-content : space-between;
+	flex-wrap : wrap;
+	width : 100%;
+	padding : 0;
+	margin : 0;
+	list-style : none;
 	}
 	
-footer > div.copyright > span > a {
+footer > div.copyright > ul > li { 
+	position : relative; 
+	min-height : 50px;
+	}
+
+footer > div.copyright > ul > li:first-child { padding : 5px 0; }	
+footer > div.copyright > ul > li > span { display : block; }
+footer > div.copyright > ul > li > span.callback { margin : 0 auto; }
+
+footer > div.copyright > ul > li > span { 
+	font-weight : 400;
+	font-size : 14px;
+	line-height : 20px;
+	font-family : 'GothamPro', Arial, Tahoma, Verdana, sans-serif;
+	}
+	
+footer > div.copyright > ul > li > span > a {
 	font-weight : 500;
 	font-size : inherit;
 	line-height : inherit;
@@ -31,9 +49,9 @@ footer > div.copyright > span > a {
 	transition : all 0.25s ease;
 	}
 	
-footer > div.copyright > span > a:hover { color : rgba(218, 59, 83, 1); }
+footer > div.copyright > ul > li > span > a:hover { color : rgba(218, 59, 83, 1); }
 
-footer > div.copyright > ul {
+footer > div.copyright > ul > li > ul {
 	z-index : 10;
 	display : flex;
 	width : 150px;
@@ -41,18 +59,18 @@ footer > div.copyright > ul {
 	list-style : none;
 	}
 	
-footer > div.copyright > ul > li,
-footer > div.copyright > ul > li > a {
+footer > div.copyright > ul > li > ul > li,
+footer > div.copyright > ul > li > ul > li > a {
 	width : 50px;
 	height : 50px;	
 	}
 	
-footer > div.copyright > ul > li > a {
+footer > div.copyright > ul > li > ul > li > a {
 	display : block;
 	position : relative;
 	}
 
-footer > div.copyright > ul > li > a::before {
+footer > div.copyright > ul > li > ul > li > a::before {
 	position : absolute;
 	top : 0;
 	left : 0;
@@ -66,51 +84,21 @@ footer > div.copyright > ul > li > a::before {
 	transition : all 0.25s ease;
 	}
 	
-footer > div.copyright > ul > li > a:hover::before { top : -5px; }
-footer > div.copyright > ul > li:nth-child(1) > a::before { content : '\ea90'; }
-footer > div.copyright > ul > li:nth-child(2) > a::before { content : '\ea96'; }
-footer > div.copyright > ul > li:nth-child(3) > a::before { content : '\ea92'; }
-footer > div.copyright > ul > li:nth-child(1) > a:hover::before { color : rgba(59, 89, 152, 1); }
-footer > div.copyright > ul > li:nth-child(2) > a:hover::before { color : rgba(29, 161, 242, 1); }
-footer > div.copyright > ul > li:nth-child(3) > a:hover::before { color : rgba(217, 49, 117, 1); }
+footer > div.copyright > ul > li > ul > li > a:hover::before { top : -5px; }
+footer > div.copyright > ul > li > ul > li:nth-child(1) > a::before { content : '\ea90'; }
+footer > div.copyright > ul > li > ul > li:nth-child(2) > a::before { content : '\ea96'; }
+footer > div.copyright > ul > li > ul > li:nth-child(3) > a::before { content : '\ea92'; }
+footer > div.copyright > ul > li > ul > li:nth-child(1) > a:hover::before { color : rgba(59, 89, 152, 1); }
+footer > div.copyright > ul > li > ul > li:nth-child(2) > a:hover::before { color : rgba(29, 161, 242, 1); }
+footer > div.copyright > ul > li > ul > li:nth-child(3) > a:hover::before { color : rgba(217, 49, 117, 1); }
 
 footer > div.footer {
 	background : rgba(246, 246, 246, 1);
 	color : rgba(55, 55, 55, 1);
 	}
 	
-footer > div.footer > span {
-	font : 500 18px/40px 'GothamPro', Arial, Tahoma, Verdana, sans-serif;
-	text-transform : uppercase;
-	}
-	
-footer > div.footer > ul,
-footer > div.footer > ul > li > ul {
-	width : 100%;
-	padding : 0;
-	list-style : none;
-	}
-	
-footer > div.footer > ul { 
-	display : flex;
-	flex-wrap : wrap;
-	margin : 0;
-	}
-
-footer > div.footer > ul > li > ul { margin : 10px 0; }
-footer > div.footer > ul > li > ul > li { width : 100%; }
-
-footer > div.footer > ul > li > ul > li > a {
-	background : inherit;
-	color : inherit;
-	font : 500 14px/28px 'GothamPro', Arial, Tahoma, Verdana, sans-serif;
-	transition : all 0.25s ease;
-	}
-
-footer > div.footer > ul > li > ul > li > a:hover { color : rgba(218, 59, 83, 1); }
-
 footer > div.footer > div {
-	margin : 10px 0 0 0;
+	margin : 20px 0 0 0;
 	border-top : 1px solid rgba(227, 227, 227, 1);
 	}
 	
@@ -122,157 +110,104 @@ footer > div.footer > div > span {
 	text-align : center;
 	}
 	
-footer > div.footer > ul.presentation > li { 
-	display : flex;
-	flex-wrap : wrap;
-	padding : 10px 0 10px 0 !important;
-	}
-	
-footer > div.footer > ul.presentation > li > div {
-	background : rgba(255, 255, 255, 1);
-	color : rgba(55, 55, 55, 1);
-	}
-
-@media only screen and (min-width : 961px) {
-	footer > div.copyright { margin : 20px 60px; }		
-	footer > div.copyright > span { margin : 0 20px 0 0; }
-		
-	footer > div.copyright > ul { 
-		position : absolute;
-		top : 0;
-		right : 0;
-		margin : 0;
-		}
-		
-	footer > div.footer { padding : 20px 60px; }
-	
-	footer > div.footer > ul > li { 
-		width : 50%; 
-		padding : 0 5% 0 0;
-		}
-		
-	footer > div.footer > ul.presentation > li > div {
-		width : 48%;
-		margin : 0 2% 0 0;
-		}
-	}
-	
-@media only screen and (min-width : 821px) and (max-width : 960px) {
+@media only screen and (min-width : 821px) {
 	footer > div.copyright { margin : 20px 60px; }
-		
-	footer > div.copyright > span {
-		display : inline-block;
-		margin : 0 20px 0 0; 
-		line-height : 50px;
-		}
-		
-	footer > div.copyright > ul {
-		position : absolute; 
-		top : 0;
-		right : 0;
-		margin : 0;
-		}
-		
-	footer > div.copyright > span.button { display : block; }
-	footer > div.footer { padding : 20px 60px; }
-	
-	footer > div.footer > ul > li { 
-		width : 50%; 
-		padding : 0 5% 0 0;
-		}
-		
-	footer > div.footer > ul.presentation > li > div {
-		width : 48%;
-		margin : 0 2% 0 0;
-		}
-	}
-	
-@media only screen and (min-width : 661px) and (max-width : 960px) {
-	footer > div.copyright { margin : 20px 40px; }
-		
-	footer > div.copyright > span {
-		display : inline-block;
-		margin : 0 20px 0 0; 
-		line-height : 44px;
-		}
-		
-	footer > div.copyright > ul {
+	footer > div.copyright > ul > li { width : 33%; }
+			
+	footer > div.copyright > ul > li > ul { 
 		position : absolute;
 		top : 0;
 		right : 0;
 		margin : 0;
 		}
 		
-	footer > div.copyright > span.button { display : block; }
-	footer > div.footer { padding : 20px 40px; }
-
-	footer > div.footer > ul > li { 
-		width : 50%; 
-		padding : 0 5% 0 0;
-		}
-		
-	footer > div.footer > ul.presentation > li > div {
-		width : 96%;
-		margin : 0 4% 10px 0;
-		}
+	footer > div.footer { padding : 20px 60px; }
+	footer > div.footer > ul > li { width : 33%; }
+	footer > div.footer > ul > li > ul > li { width : 100%; }
+	footer > div.footer > ul > li > ul > li > a { margin : 0 auto; }
 	}
 	
-@media only screen and (min-width : 521px) and (max-width : 660px) {
-	footer > div.copyright { margin : 10px 20px 20px 20px; }
-		
-	footer > div.copyright > ul {
-		position : absolute; 
-		bottom : 0;
-		left : 250px;
-		margin : 0;
-		}
-
-	footer > div.copyright > span { 
-		display : inline-block;
-		line-height : 44px;
-		margin : 0 0 0 20px;
+@media only screen and (min-width : 521px) and (max-width : 820px) {
+	footer > div.copyright { margin : 20px 40px; }
+	
+	footer > div.copyright > ul > li:last-child {
+		width : 100%;
+		margin-top : 20px;
 		}
 	
-	footer > div.copyright > span.button { display : block; }
-	footer > div.footer { padding : 10px 20px; }
-
-	footer > div.footer > ul > li { 
-		width : 50%; 
-		padding : 0 5% 0 0;
+	footer > div.copyright > ul > li > ul { 
+		position : relative;
+		margin : 0 auto;
 		}
 		
-	footer > div.footer > ul.presentation > li > div {
-		width : 96%;
-		margin : 0 4% 10px 0;
-		}
+	footer > div.footer { padding : 20px 40px; }
+	footer > div.footer > ul > li { width : 50%; }
+	footer > div.footer > ul > li > ul > li { width : 100%; }	
+	footer > div.footer > ul > li:last-child { width : 100%; }
+	footer > div.footer > ul > li > ul.presentation > li { width : 49%; }
+	footer > div.footer > ul > li > ul.presentation > li:last-child { width : 100%; }
+	footer > div.footer > ul > li > ul > li > span { margin : 0 auto; }
+	footer > div.footer > ul > li > ul > li > a { margin : 0 auto; }
 	}
 	
 @media only screen and (max-width : 520px) {
 	footer > div.copyright { margin : 20px; }
 	
-	footer > div.copyright > span { 
-		display : block;
-		line-height : 20px;
-		margin : 0 auto;
-		}
-	
-	footer > div.copyright > span.button { margin : 20px auto; }
-	 
-	footer > div.copyright > ul {
-		position : relative;
-		margin : 20px auto;
-		}
-
-	footer > div.footer { padding : 10px 20px; }
-	footer > div.footer > ul > li { width : 100%; }
-	
-	footer > div.footer > ul.presentation > li > div {
+	footer > div.copyright > ul > li {
 		width : 100%;
-		margin : 0 0 10px 0;
+		margin-top : 20px;
+		text-align : center; 
 		}
-		
-	footer > div.footer > ul.presentation > li > span.button {
-		display : block !important;
+	
+	footer > div.copyright > ul > li:first-child { margin-top : 0 !important; }
+	
+	footer > div.copyright > ul > li > ul { 
+		position : relative;
 		margin : 0 auto;
-		}
+		}	
+		
+	footer > div.footer { padding : 20px; }
+	footer > div.footer > ul > li { width : 100%; }
+	footer > div.footer > ul > li > ul > li { width : 100%; }
+	footer > div.footer > ul > li > ul > li > span { margin : 0 auto; }
+	footer > div.footer > ul > li > ul > li > a { margin : 0; }
+	footer > div.footer > ul > li > span { margin : 15px 0 0 0; }
 	}
+
+footer > div.footer > ul,
+footer > div.footer > ul > li > ul {
+	display : flex;
+	justify-content : space-between;
+	flex-wrap : wrap;
+	width : 100%;
+	margin : 0;
+	padding : 0;
+	list-style : none;
+	}
+
+footer > div.footer > ul > li > p { 
+	margin : 5px 0 15px 0;
+	padding : 0;
+	font : normal 14px/20px 'GothamPro', Arial, Tahoma, Verdana, sans-serif; 
+	}
+	
+footer > div.footer > ul > li > span {
+	display : block;
+	font : 500 16px/32px 'GothamPro', Arial, Tahoma, Verdana, sans-serif;
+	text-transform : uppercase;
+	}
+
+footer > div.footer > ul > li > ul.presentation > li { padding : 5px 0; }
+footer > div.footer > ul > li > ul > li > div { margin : 0 !important; }
+footer > div.footer > ul > li > ul > li > span { display : block; }
+
+footer > div.footer > ul > li > ul > li > a {
+	display : block;
+	width : 200px;
+	background : inherit;
+	color : inherit;
+	font : 500 14px/30px 'GothamPro', Arial, Tahoma, Verdana, sans-serif;
+	transition : all 0.25s ease;
+	}
+
+footer > div.footer > ul > li > ul > li > a:hover { color : rgba(218, 59, 83, 1); }

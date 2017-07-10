@@ -91,6 +91,7 @@ div.container > div.form > form > div > p::after {
 	content : 'Ваша заявка успешно отправлена!'; 
 	}
 
+span.button.dialog { width : 240px; }
 span.button.callback,
 span.submit { width : 200px; }
 
