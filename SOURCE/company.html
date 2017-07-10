@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.5/jquery.jcarousel.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+		<script src="js/mobile.js"></script>
+		<script src="js/lightgallery.min.js"></script>
+		<script src="js/inputmask.js"></script>
+		<script src="js/dialog.js?v=1.5"></script>
+		<script src="js/default.js?v=1.5"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/lightgallery.css">
+		<link rel="stylesheet" type="text/css" href="css/moscowhome.css">
+		<link rel="stylesheet" type="text/css" href="css/fonts.css">
+		<link rel="stylesheet" type="text/css" href="css/jcarousel.css?v=1.5">
+		<link rel="stylesheet" type="text/css" href="css/layout.css?v=1.5">
+		<link rel="stylesheet" type="text/css" href="css/style.css?v=1.5">
+		<link rel="stylesheet" type="text/css" href="css/dialogs.css?v=1.5">
+		<link rel="stylesheet" type="text/css" href="css/adaptive.css?v=1.5">
+		
+		<title>MoscowHome</title>
+	</head>
+	<body>
+		<div class="top">
+			<div class="layout_top">
+				<div class="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<div class="logo">
+					<a href="/moscowhome/"><img src="images/logo.png" alt=""></a>
+					
+				</div>
+				<div class="menu_mobile">
+					<a class="category_mobile" href="projects/" data-category="projects">Реализованные проекты</a>
+					<div class="podcategory_mobile">
+						<a class="" href="projects/">Дома</a>
+						<a href="projects/">Отделка</a>
+						<a href="projects/">Ландшафт</a>
+						<a href="projects/">Комплексная застройка</a>
+						<a href="projects/">Проекты</a>
+					</div>
+					<a class="category_mobile" href="services/" data-category="services">Услуги</a>
+					<div class="podcategory_mobile">
+						<a href="service/">Строительство</a>
+						<a href="service/">Отделка</a>
+						<a href="service/">Ландшафтные работы</a>
+						<a href="service/">Инженерные системы</a>
+						<a href="service/">Застройка поселков</a>
+					</div>
+					<a href="company/">Компания</a>
+					<a href="contacts/">Контакты</a>
+				</div>
+				<div class="phone icon-phone">
+					8 495 762-99-66
+				</div>
+				<div class="clr"></div>
+			</div>
+			<div class="menu flex flex_center">
+				<a class="category" href="projects/" data-category="projects">Реализованные проекты</a><a class="category" href="services/" data-category="services">Услуги</a><a href="company/">Компания</a><a href="contacts/">Контакты</a>
+			</div>
+			<div class="layout_podmenu" data-left="0">
+				<div class="category_projects flex flex_center">
+					<a href="projects/">Дома</a>
+					<a href="projects/">Отделка</a>
+					<a href="projects/">Ландшафт</a>
+					<a href="projects/">Комплексная застройка</a>
+					<a href="projects/">Проекты</a>
+				</div>
+				<div class="category_services flex flex_center">
+					<a href="service/">Строительство</a>
+					<a href="service/">Отделка</a>
+					<a href="service/">Ландшафтные работы</a>
+					<a href="service/">Инженерные системы</a>
+					<a href="service/">Застройка поселков</a>
+				</div>
+			</div>
+		</div>
+		<div class="layout_content layout_padding">
+			<div class="layout_company">
+	<div class="breadcramps">
+		<a href="#">Главная</a>
+		<span>Компания</span>
+	</div>
+	<h1>О компании</h1>
+	<div class="top_img" style="background-image:url(images_content/company_main.jpg);"></div>
+	<h2>
+		Moscowhome — строительство и отделка, ландшафт и проектирование домов любой сложности
+	</h2>
+	<div class="line"></div>
+	<div class="description">
+		Известная в сегменте частного домостроения бизнес класса, строительная компания MOSCOWHOME занимает лидирующие позиции данной сферы деятельности.<br><br>
+		Собрав в своём коллективе профессионалов из разных областей, мы предоставляем своим клиентам полный спектр услуг:
+	</div>
+	<div class="border_left column4 flex">
+		<div class="column_item">
+			От подбора земельного участка до оформления документов на строительство, газификацию;
+		</div>
+		<div class="column_item">
+			От разработки концепций будущих домов, до проработки интерьерных решений;
+		</div>
+		<div class="column_item">
+			От строительства, до внутренней отделки;
+		</div>
+		<div class="column_item">
+			От создания парково-садовых зон, до их последующего содержания
+		</div>
+	</div>
+	<div class="counter red flex">
+		<div>
+			<span>21</span>
+			Год на рынке
+		</div>
+		<div>
+			<span>250</span>
+			Штатных профессионалов
+		</div>
+		<div>
+			<span>60+</span>
+			Элитных проектов
+		</div>
+	</div>
+	<h2>
+		Сотрудничая с нами, Вы приобретаете —<br>
+		товарищей  сфере строительства
+	</h2>
+	<div class="column3 flex">
+		<div class="column_item">
+			<div class="title_icon icon-doverie">Доверие</div>
+			Уже долгие годы благодаря безупречной репутации компания пользуется доверием клиентов
+		</div>
+		<div class="column_item">
+			<div class="title_icon icon-bag">Опыт</div>
+			Большой опыт позволяет нам осуществлять строительство домов любой сложности
+		</div>
+		<div class="column_item">
+			<div class="title_icon icon-like">Рекомендации</div>
+			Большая часть объектов возводится с заказчиками, пришедшими по рекомендации или повторно для нового строительства
+		</div>
+	</div>
+	<div class="counter black flex">
+		<div>
+			<span>2010</span>
+			соток благоустройства
+		</div>
+		<div>
+			<span>96</span>
+			элитных дома
+		</div>
+		<div>
+			<span>5</span>
+			коттеджных поселка
+		</div>
+		<div>
+			<span>36000</span>
+			Квадратных метров
+		</div>
+	</div>
+	<h2>
+		Преимущества
+	</h2>
+	<div class="column4 flex">
+		<div class="column_item">
+			<div class="title_icon icon-clients">Индивидуальный подход к клиенту</div>
+		</div>
+		<div class="column_item">
+			<div class="title_icon icon-preimushestva">Фиксированная сметная стоимость</div>
+		</div>
+		<div class="column_item">
+			<div class="title_icon icon-calendar">Соблюдение сроков</div>
+		</div>
+		<div class="column_item">
+			<div class="title_icon icon-reputation">Контроль качества</div>
+			Технадзор на Вашей стороне
+		</div>
+		<div class="column_item">
+			<div class="title_icon icon-ok-hand">Полный цикл работ в одних руках</div>
+			Спрос и гарантии, так же с одной компании
+		</div>
+		<div class="column_item">
+			<div class="title_icon icon-compass">Собственное проектное бюро</div>
+		</div>
+		<div class="column_item">
+			<div class="title_icon icon-documents">Документарное сопровождение</div>
+			Получение разрешений, согласования и пр.
+		</div>
+	</div>
+	<div class="counter red flex">
+		<div>
+			<span class="icon-real-estate"></span>
+			Собственное агентство недвижимости Moscowhome.ru
+		</div>
+		<div>
+			<span class="icon-sale"></span>
+			Купить участок, продать дом, квартиру
+		</div>
+		<div>
+			<span class="icon-safety"></span>
+			Сопровождение сделок с недвижимостью
+		</div>
+	</div>
+	<h3>
+		Услуги
+	</h3>
+	<h2>
+		Moscow Home обладает многолетним опытом<br>
+		строительства домов премиум класса. Мы строим дома<br>
+		которые отражают статус своего хозяина,<br>
+		подчёркивают его вкус и увлечения
+	</h2>
+	<div class="service_item" data-carousel_num="1">
+		<div class="photo left">
+			<div class="carousel_service jcarousel-wrapper">
+				<div class="jcarousel">
+					<ul class="ul_carusel lightgallery">
+						<li class="li_carusel"><a href="images_content/service_1.jpg" class="galery"><img src="images_content/service_1.jpg" alt=""></a></li>
+						<li class="li_carusel"><a href="images_content/service_1.jpg" class="galery"><img src="images_content/service_1.jpg" alt=""></a></li>
+						<li class="li_carusel"><a href="images_content/service_1.jpg" class="galery"><img src="images_content/service_1.jpg" alt=""></a></li>
+						<li class="li_carusel"><a href="images_content/service_1.jpg" class="galery"><img src="images_content/service_1.jpg" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="service_navigation flex">
+				<div class="navigation_left icon-left"></div>
+				<div class="navigation_right icon-right"></div>
+			</div>
+		</div>
+		<div class="text left">
+			<div class="title icon-stroitelstvo">Строительство домов</div>
+			<div>
+				Основа дома — это фундамент, наши специалисты помогут сконструировать (ленточный, монолитно — свайный, монолитный/плитный фундамент)
+				и выполнить строительство домов любой сложности:
+			</div>
+			<ul>
+			<li>монолитных;</li>
+			<li>кирпичных;</li>
+			</ul>
+			
+				с учётом индивидуального желания Заказчика.
+			<div class="red">
+				Кровельные работы любой сложности:<br>
+				Фасадные работы<br>
+				Монтаж окон и входных групп
+			</div>
+			<a href="#"><div class="button black"><span>Перейти к услуге</span></div></a>
+		</div>
+		<div class="clr"></div>
+	</div>
+	<div class="service_item" data-carousel_num="1">
+		<div class="photo right">
+			<div class="carousel_service jcarousel-wrapper">
+				<div class="jcarousel">
+					<ul class="ul_carusel lightgallery">
+						<li class="li_carusel"><a href="images_content/service_1.jpg" class="galery"><img src="images_content/service_1.jpg" alt=""></a></li>
+						<li class="li_carusel"><a href="images_content/service_1.jpg" class="galery"><img src="images_content/service_1.jpg" alt=""></a></li>
+						<li class="li_carusel"><a href="images_content/service_1.jpg" class="galery"><img src="images_content/service_1.jpg" alt=""></a></li>
+						<li class="li_carusel"><a href="images_content/service_1.jpg" class="galery"><img src="images_content/service_1.jpg" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="service_navigation flex">
+				<div class="navigation_left icon-left"></div>
+				<div class="navigation_right icon-right"></div>
+			</div>
+		</div>
+		<div class="text right">
+			<div class="title icon-stroitelstvo">Строительство домов</div>
+			<div>
+				Основа дома — это фундамент, наши специалисты помогут сконструировать (ленточный, монолитно — свайный, монолитный/плитный фундамент)
+				и выполнить строительство домов любой сложности:
+			</div>
+			<ul>
+			<li>монолитных;</li>
+			<li>кирпичных;</li>
+			</ul>
+			
+				с учётом индивидуального желания Заказчика.
+			<div class="red">
+				Кровельные работы любой сложности:<br>
+				Фасадные работы<br>
+				Монтаж окон и входных групп
+			</div>
+			<a href="#"><div class="button black"><span>Перейти к услуге</span></div></a>
+		</div>
+		<div class="clr"></div>
+	</div>
+</div>
+		</div>
+		<div class="line_bottom"></div>
+		<div class="layout_bottom layout_padding flex">
+			<div class="copy_mail">
+				<span class="copyright">© 2002–2017 Moscow Home</span> | <a href="mailto:zayavka@moscowhome.pro" class="mail">zayavka@moscowhome.pro</a>
+			</div>
+			<div id="callme" class="button button_dialog black"><span>заказать звонок</span></div>
+			<div class="dialog_mobile">
+				<div class="header"><h4>Заявка</h4></div>
+				<div class="dialog_input" data-type="text">
+					<input name="name" type="text">
+					<span class="label">Имя<span class="red">*</span></span>
+				</div>
+				<div class="dialog_input" data-type="phone">
+					<input name="phone" type="tel"> 
+					<span class="label">Телефон<span class="red">*</span></span>
+				</div>
+				<div class="dialog_input" data-type="text">
+					<textarea name="comment" style="height:100px;"></textarea>
+					<span class="label">Комментарий</span>
+				</div>
+				<div class="clr"></div>
+				<div class="action">
+					<div class="button pink disabled submit_button" data-access="false">
+						<span>Отправить заявку</span>
+					</div>
+					<div class="help"><span class="red">*</span>Поля обязательны для заполнения</div>
+					<div class="ok_button">
+						<span>Ок</span>
+					</div>
+				</div>
+			</div>
+			<div class="social flex flex_center">
+				<a href="#" class="icon-facebook"></a>
+				<a href="#" class="icon-twitter"></a>
+				<a href="#" class="icon-instagram"></a>
+			</div>
+		</div>
+		<div class="layout_bottom_gray layout_padding">
+			<div class="bottom_text flex">
+				<div class="bottom_text_left">
+					Строительство элитных загородных домов<br><br>
+					МО, 11 км Рублёво-Успенского шоссе, д. Усово,<br>
+					НПИЗ «Счастливый дом», д. 1<br><br>
+					Разработка сайта&nbsp;&nbsp;&nbsp;<a href="http://mediawaves.ru"><img src="images/mediawaves.png" alt=""></a>
+				</div>
+				<div class="bottom_menu">
+					<a href="projects/">Реализованные проекты</a>
+					<a href="services/">Услуги</a>
+					<a href="company/">Компания</a>
+					<a href="contacts/">Контакты</a>
+				</div>
+				<div class="order flex1">
+					<div class="order_title ">Презентация работ</div>
+					<div class="flex">
+						<div class="dialog_input flex1" data-type="text">
+							<input type="text">
+							<span class="label">Имя</span>
+						</div>
+						<div class="dialog_input " data-type="phone">
+							<input type="text">
+							<span class="label">Телефон</span>
+						</div>
+						<div class="button black disabled"><span>Заказать презентацию</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="text_about">
+				<h6>Строительство и отделка элитных домов</h6>
+				Строительная компания Moscow Home уже более пятнадцати лет занимается строительством элитной недвижимости в престижных районах Московской области. Уже долгие годы благодаря безупречной репутации компания пользуется доверием клиентов. Большой опыт позволяет нам осуществлять строительство домов любой сложности. Большая часть объектов возводится с заказчиками, пришедшими по рекомендации или повторно для нового строительства, ремонта или модернизации уже построенных домов. Задачи компании Moscow Home — это качественное преобразование существующих или создание новых объектов
+				в соответствии с запросами Заказчика. Индивидуальный подход делает возможным выполнение любых проектных решений.
+			</div>
+		</div>
+		<div class="clr"></div>
+		
+		<div class="dialog" data-dialog="order_same">
+			<div class="blackout"></div>
+			<div class="content md-content">
+				<div class="close"></div>
+				<div class="header"><h4>Заявка</h4></div>
+				<div class="dialog_input" data-type="text">
+					<input name="name" type="text">
+					<span class="label">Имя<span class="red">*</span></span>
+				</div>
+				<div class="coll_left">
+					<div class="dialog_input" data-type="phone">
+						<input name="phone" type="tel"> 
+						<span class="label">Телефон<span class="red">*</span></span>
+					</div>
+					<div class="dialog_input" data-type="email">
+						<input name="email" type="text">
+						<span class="label">E-mail<span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="dialog_input" data-type="text">
+					<textarea name="comment" style="height:100px;"></textarea>
+					<span class="label">Комментарий</span>
+				</div>
+				<div class="clr"></div>
+				<div class="action">
+					<div class="button pink disabled submit_button" data-access="false">
+						<span>Отправить заявку</span>
+					</div>
+					<div class="help"><span class="red">*</span>Поля обязательны для заполнения</div>
+					<div class="ok_button">
+						<span>Ок</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dialog" data-dialog="order_presentation">
+			<div class="blackout"></div>
+			<div class="content md-content">
+				<div class="close"></div>
+				<div class="header"><h4>Заявка</h4></div>
+				<div class="flex flex_center">
+					<div class="toggle_button active flex1">
+						Общая
+						<input type="hidden" name="category_order[]" value="1">
+					</div>
+					<div class="toggle_button flex1">
+						Строительство
+						<input type="hidden" name="category_order[]" value="2">
+					</div>
+					<div class="toggle_button flex1">
+						Отделка
+						<input type="hidden" name="category_order[]" value="3">
+					</div>
+				</div>
+				<div class="dialog_input" data-type="text">
+					<input name="name" type="text">
+					<span class="label">Имя<span class="red">*</span></span>
+				</div>
+				<div class="coll_left">
+					<div class="dialog_input" data-type="phone">
+						<input name="phone" type="tel"> 
+						<span class="label">Телефон<span class="red">*</span></span>
+					</div>
+					<div class="dialog_input" data-type="email">
+						<input name="email" type="text">
+						<span class="label">E-mail<span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="dialog_input" data-type="text">
+					<textarea name="comment" style="height:100px;"></textarea>
+					<span class="label">Комментарий</span>
+				</div>
+				<div class="clr"></div>
+				<div class="action">
+					<div class="button pink disabled submit_button" data-access="false">
+						<span>Отправить заявку</span>
+					</div>
+					<div class="help"><span class="red">*</span>Поля обязательны для заполнения</div>
+					<div class="ok_button">
+						<span>Ок</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dialog" data-dialog="callme">
+			<div class="blackout"></div>
+			<div class="content md-content">
+				<div class="close"></div>
+				<div class="header"><h4>Заявка на звонок</h4></div>
+				<div class="flex">
+					<div class="dialog_input input_name" data-type="text">
+						<input name="name" type="text">
+						<span class="label">Имя<span class="red">*</span></span>
+					</div>
+					<div class="dialog_input flex1" data-type="phone">
+						<input name="phone" type="tel"> 
+						<span class="label">Телефон<span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="dialog_input" data-type="text">
+					<textarea name="comment" style="height:100px;"></textarea>
+					<span class="label">Комментарий</span>
+				</div>
+				<div class="clr"></div>
+				<div class="action">
+					<div class="button pink disabled submit_button" data-access="false">
+						<span>Отправить заявку</span>
+					</div>
+					<div class="help"><span class="red">*</span>Поля обязательны для заполнения</div>
+					<div class="ok_button">
+						<span>Ок</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

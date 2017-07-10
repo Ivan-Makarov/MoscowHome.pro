@@ -1,0 +1,325 @@
+.dialog{
+	visibility: hidden;
+	overflow-y:hidden;
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index:1005;
+}
+.dialog .content{
+	position:absolute;
+	width:650px;
+	top:calc(50% - 500px/2);
+	left:calc(50% - 650px/2);
+
+	background-color:#fafafa;
+	padding:0 120px;
+	z-index:1007;
+	
+	-webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(-70deg);
+    -moz-transform: rotateX(-70deg);
+    -ms-transform: rotateX(-70deg);
+    transform: rotateX(-70deg);
+    opacity: 0;
+	
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.dialog[data-dialog="phone"] .content{
+	height:170px;
+}
+.dialog.success .content{
+	background-color:#92c951;
+	height:130px;
+	top:calc(50% - 130px/2);
+}
+.dialog .blackout{
+	position:absolute;
+	opacity:0;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index:1005;
+	background-color:rgba(0,0,0,0.5);
+}
+.dialog .header, .dialog .action{
+	text-align:center;
+	margin:0 -120px 20px -120px;
+	padding:20px 0;
+	background-color:#fff;
+}
+.dialog .action{
+	margin-top:5px;
+	margin-bottom:0px;
+}
+.dialog .action .button{
+	display:inline-block;
+	margin:20px;
+}
+.dialog .help, .dialog_mobile .help{
+	color:#999999;
+	font-size:12px;
+}
+.dialog .red, .dialog_mobile .red{
+	color:red;
+}
+.dialog .sub_header{
+	display:none;
+	font-size:22px;
+	color:#fff;
+	font-weight:300;
+	text-align:center;
+	margin-bottom:20px;
+}
+.dialog .close:after{
+    content: "×";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 30px;
+    color: #b2b2b2;
+    cursor: pointer;
+}
+.button_dialog_header{
+	height:42px;
+	margin:15px 15px 0 15px;
+}
+
+.dialog .coll_left, .dialog .coll_right{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.dialog .coll_left .dialog_input:first-child, .dialog .coll_right .dialog_input:last-child{
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.dialog .coll_left .dialog_input:last-child, .dialog .coll_right .dialog_input:first-child{
+	-webkit-box-flex: 2;
+	-moz-box-flex: 2;
+	-webkit-flex: 2;
+	-ms-flex: 2;
+	flex: 2;
+}
+.dialog .coll_left .dialog_input:first-child, .dialog .coll_right .dialog_input:first-child{
+	margin-right:20px;
+}
+
+.dialog_input{
+	padding:10px 10px;
+	padding-top:20px;
+	margin-bottom:10px;
+	border:1px solid #d1d1d1;
+	background-color:#fff;
+	position:relative;
+}
+.dialog_input.selected{
+	border: 2px solid #5da7e4;
+}
+.dialog_input[data-validation="error"]{
+	border: 2px solid #e55d5d;
+}
+.dialog_input[data-validation="error"]:before{
+	content: "\e923";
+	position:absolute;
+	color:#e55d5d;
+	font-size:20px;
+	top:15px;
+	right:15px;
+}
+.dialog_input[data-validation="ok"]{
+	border: 2px solid #90be52;
+}
+.dialog_input[data-validation="ok"]:after{
+	content: "\e924";
+	position:absolute;
+	color:#90be52;
+	font-size:20px;
+	top:15px;
+	right:15px;
+}
+.dialog_input[data-type="empty"]{
+	background-color:#dfdfdf;
+}
+.dialog_input[data-type="empty"] .label{
+	color:#666!important;
+}
+.dialog_input .empty{
+	height:18px;
+	display: block;
+}
+.dialog_input .label{
+	position:absolute;
+	z-index:9;
+	left:10px;
+	top:18px;
+	font-size:14px;
+	color:#a5a5a5;
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.dialog_input input, .dialog_input textarea{
+	position:relative;
+	z-index:10;
+	border:none;
+	background-color:transparent;
+	font-size:14px;
+	width:100%;
+	outline:none;
+}
+.dialog_input input:focus + .label, .dialog_input input.no_empty + .label,
+.dialog_input textarea:focus + .label, .dialog_input textarea.no_empty + .label{
+	font-size:12px;
+	top:5px;
+}
+.dialog_input .icon{
+	position:absolute;
+	right:0px;
+	font-family: countrypenny;
+	padding: 15px;
+    top: 0;
+	z-index:15;
+}
+.submit_button{
+
+}
+.ok_button{
+	display:none;
+}
+
+.dialog .preloader{
+	display:none;
+	position:absolute;
+	left:50%;
+	top:50%;
+}
+.toggle_button{
+	padding: 15px 20px;
+    margin: 10px 5px;
+	background-color:#fff;
+	border:1px solid #d1d1d1;
+	font-size:14px;
+	
+	text-align:center;
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	
+	cursor:pointer;
+}
+.toggle_button.active{
+	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+	background-color:#da3b53;
+	color:#fff;
+	border:1px solid transparent;
+}
+/* OPEN */
+.dialog.show{
+	visibility: visible;
+	display:block;
+}
+.dialog.show .blackout{
+	opacity: 1;
+	visibility: visible;
+}
+
+
+.dialog.show .content {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+/* MOBILE */
+
+.dialog_mobile{
+	background-color:#fafafa;
+	margin: 0 -20px;
+	padding:0 20px;
+	max-height:0px;
+	
+	overflow-y:hidden;
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.dialog_mobile .header{
+	background-color:#fff;
+	text-align:center;
+	margin: 0 -20px;
+	margin-bottom: 10px;
+	padding:10px 0;
+}
+.dialog_mobile .action{
+	text-align:center;
+	background-color:#fff;
+	margin: 10px -20px;
+	padding:20px 40px;
+}
+.dialog_mobile .submit_button{
+	text-align:center;
+	margin-bottom:10px;
+}
+
+
+
+/* OPEN MOBILE */
+
+.button_dialog.open{
+	width:100%!important;
+	margin: 0!important;
+}
+.button_dialog.open span:after{
+	-webkit-transform:rotate(-90deg);
+	-moz-transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg);
+	transform:rotate(-90deg);
+}
+.button_dialog.open + .dialog_mobile{
+	max-height:800px;
+}
+
+/*----*/
+
+.dialog[data-dialog="callme"] .input_name{
+	margin-right:10px;
+	width:55%;
+}
+@media all and (max-device-width: 768px), screen and (max-width: 768px) {
+	.button_dialog span{
+		position:relative;
+		display: block;
+	}
+	.button_dialog span:after{
+		position: absolute;
+		right: 0;
+		left:auto;
+		top:6px;
+		-webkit-transform:rotate(90deg);
+		-moz-transform:rotate(90deg);
+		-ms-transform:rotate(90deg);
+		transform:rotate(90deg);
+	}
+}
