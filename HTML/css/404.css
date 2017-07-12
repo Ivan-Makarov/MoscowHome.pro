@@ -33,7 +33,7 @@
 .content-wrapper .err404-wrapper--message .error-message--discreet {
     padding-top : 20px;
     margin-top : 45px;
-    border-top : 1px solid #aabbcc;
+    border-top : 1px solid rgba(227, 227, 227, 1);
     font : 400 14px/20px 'GothamPro', Arial, Tahoma, Verdana, sans-serif;
     color : #999999;
 	}

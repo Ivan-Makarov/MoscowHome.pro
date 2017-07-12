@@ -4,7 +4,7 @@ article > div.content a,
 article > div.brief a { color : rgba(218, 59, 83, 1); }
 
 article > div.content a:hover,
-article > div.brief a:hover { color : rgba(218, 59, 83, 1); }
+article > div.brief a:hover { color : rgba(55, 55, 55, 1); }
 
 @media only screen and (min-width : 821px) {
 	article { margin : 0 60px; }
