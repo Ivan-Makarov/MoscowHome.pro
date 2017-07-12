@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+article > div.content a,
+article > div.brief a { color : rgba(218, 59, 83, 1); }
+
+article > div.content a:hover,
+article > div.brief a:hover { color : rgba(218, 59, 83, 1); }
+
 @media only screen and (min-width : 821px) {
 	article { margin : 0 60px; }
 	article > div.content { padding : 0 0 60px 0; }
