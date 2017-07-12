@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+$red: #da3b53;
+$red2: #da3e54;
+$gray: #f5f6f6;
+$gray2: #d7d7d7;
+$gray3: #e2e3e3;
+$gray4: #373737;
+$text-color: $gray4;
+
+@mixin fontGotham($w: 400, $s: 14px, $lh: 22px) {
+    font: $w #{$s}/#{$lh} 'GothamPro', Arial, Tahoma, Verdana, sans-serif;
+}
+@mixin fontPlayfair($w, $s, $lh) {
+    font: $w #{$s}/#{$lh} 'PlayfairDisplay', Arial, Tahoma, Verdana, sans-serif;
+}
+
+.content {
+    color: $text-color;
+}
+
+.general {
+    &--section {
+        padding-top: 100px;
+        &__intro {
+            position: relative;
+            padding-top: 250px;
+            background-image: url('../img/builders2.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+            z-index: 10;
+            &:after {
+                position: absolute;
+                content: '';
+                top: 250px;
+                left: 0;
+                display: block;
+                z-index: -10;
+                background-color: white;
+                width: 100%;
+                height: 70%;
+            }
+        }
+        &:nth-of-type(odd) {
+            .general--highlights {
+                background-color: $red2;
+            }
+        }
+        &:nth-of-type(even) {
+            .general--highlights {
+                background-color: $text-color;
+            }
+        }
+    }
+    &--section-heading {
+        @include fontPlayfair(400, 36px, 48px);
+        font-style: italic;
+        text-align: center;
+        width: 900px;
+        margin: 50px auto 70px;
+    }
+    &--text {
+        position: relative;
+        margin: 0 auto;
+        width: 600px;
+        margin-bottom: 20px;
+        @include fontGotham(400, 15px, 22px);
+        &:first-of-type {
+            &:before {
+                position: absolute;
+                top: -40px;
+                left: 150px;
+                content: '';
+                display: block;
+                height: 1px;
+                width: 300px;
+                border-top: 1px solid $gray3;
+            }
+        }
+        &:last-of-type {
+            margin-bottom: 45px;
+        }
+    }
+    &--section-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        &__from-to {
+            justify-content: space-between;
+            margin-bottom: 120px;
+        }
+    }
+    &--section-list-item {
+        &__from-to {
+            width: 25%;
+            border-left: 5px solid $gray2;
+            line-height: 23px;
+            padding: 10px 30px 13px 20px;
+        }
+    }
+    &--highlights {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 180px;
+        color: white;
+        list-style: none;
+    }
+    &--highlights-item {
+        text-align: center;
+        @include fontGotham(500, 15px, 24px);
+        letter-spacing: 0.05em;
+    }
+    &--highlights-important {
+        display: block;
+        margin: 0 auto;
+        @include fontGotham(500, 85px, 100px);
+        letter-spacing: -0.05em;
+
+    }
+}
+
+
+@media only screen and (min-width: 1301px) {
+
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1300px) {
+    .content-wrapper {
+        .err404-wrapper {
+            padding: 80px 95px;
+        }
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+    .content-wrapper {
+        flex-direction: column;
+        .err404 {
+            width: 100%;
+        }
+        .err404-wrapper {
+            width: 100%;
+            padding: 110px 140px;
+        }
+    }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 601px) {
+    .content-wrapper {
+        flex-direction: column;
+        .err404 {
+            width: 100%;
+        }
+        .err404-wrapper {
+            width: 100%;
+            padding: 70px;
+        }
+    }
+}
+
+@media only screen and (max-width: 401px) {
+    .content-wrapper {
+        flex-direction: column;
+        .err404 {
+            width: 100%;
+        }
+        .err404-wrapper {
+            width: 100%;
+            padding: 70px 50px;
+        }
+    }
+}
