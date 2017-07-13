@@ -14,6 +14,32 @@ $text-color: $gray4;
 @mixin fontPlayfair($w, $s, $lh) {
     font: $w #{$s}/#{$lh} 'PlayfairDisplay', Arial, Tahoma, Verdana, sans-serif;
 }
+@mixin item-icon($url, $w: 40px, $h: auto) {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: $w $h;
+    background-image: url($url);
+}
+@mixin important-icon($url) {
+    height: 60px;
+    width: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url($url);
+    background-position: 50% 0;
+}
+@mixin services-bg-l($url, $w: 55%, $h: auto) {
+    background-repeat: no-repeat;
+    background-size: $w $h;
+    background-position: 0 0;
+    background-image: url($url);
+}
+@mixin services-bg-r($url, $w: 55%, $h: auto) {
+    background-repeat: no-repeat;
+    background-size: $w $h;
+    background-position: 100% 0;
+    background-image: url($url);
+}
 
 body {
     overflow-x: hidden;
@@ -24,8 +50,8 @@ body {
 }
 
 .general {
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 20px;
+    margin-left: 20px;
     &--section {
         padding-top: 100px;
         &__intro {
@@ -109,6 +135,8 @@ body {
         }
     }
     &--section-list-item {
+        padding-left: 60px;
+        margin-bottom: 85px;
         &__from-to {
             width: 25%;
             border-left: 5px solid $gray2;
@@ -118,19 +146,61 @@ body {
         &__heading-with-text {
             width: 25%;
         }
+        &__trust {
+            @include item-icon('../img/trust.png');
+        }
+        &__experience {
+            @include item-icon('../img/bag.png');
+        }
+        &__recommendations {
+            @include item-icon('../img/like.png');
+        }
+        &__client {
+            @include item-icon('../img/clients.png')
+        }
+        &__fixprice {
+            @include item-icon('../img/rouble.png')
+        }
+        &__deadline {
+            @include item-icon('../img/calendar.png')
+        }
+        &__quality {
+            @include item-icon('../img/reputation.png')
+        }
+        &__cycle {
+            @include item-icon('../img/ok-hand.png')
+        }
+        &__bureau {
+            @include item-icon(
+                $url: '../img/compass.png',
+                $w: auto,
+                $h: 50px
+            );
+        }
+        &__documents {
+            @include item-icon(
+                $url: '../img/documents.png',
+                $w: auto,
+                $h: 50px
+            )
+        }
     }
     &--list-item-heading {
+        position: relative;
         display: block;
         width: 250px;
-        padding-bottom: 20px;
+        padding-bottom: 15px;
         text-transform: uppercase;
         font-weight: 500;
+        line-height: 22px;
         border-bottom: 1px solid $gray3;
     }
     &--list-item-text {
-        padding-top: 15px;
+        padding-top: 5px;
+        &__narrow {
+            padding-right: 150px;
+        }
     }
-    // переделать
     &--highlights {
         display: flex;
         justify-content: space-around;
@@ -139,20 +209,170 @@ body {
         color: white;
         list-style: none;
         position: relative;
-        left: -60px;
+        left: -80px;
         width: 100vw;
     }
-    // ---
     &--highlights-item {
         text-align: center;
         @include fontGotham(500, 15px, 24px);
         letter-spacing: 0.05em;
+        text-transform: uppercase;
+        width: 25%;
+        &__narrow {
+            width: 15%;
+        }
     }
     &--highlights-important {
         display: block;
         margin: 0 auto;
         @include fontGotham(500, 85px, 100px);
         letter-spacing: -0.05em;
+        &__agency {
+            @include important-icon('../img/real-estate.png');
+            margin-bottom: 10px;
+        }
+        &__buy-sell {
+            @include important-icon('../img/sale.png');
+            margin-bottom: 10px;
+        }
+        &__deals {
+            @include important-icon('../img/safety.png');
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.services {
+    padding-top: 65px;
+    &--heading {
+        @include fontGotham(700, 36px, 48px);
+        text-align: center;
+    }
+    &--subheading {
+        @include fontPlayfair(400, 36px, 48px);
+        font-style: italic;
+        text-align: center;
+        width: 950px;
+        margin: 50px auto 70px;
+
+    }
+    &--item {
+        position: relative;
+        min-height: 550px;
+        display: flex;
+        &:nth-of-type(odd) {
+            justify-content: flex-end;
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: '';
+                background-color: #fff;
+                height: 112px;
+                width: 50%;
+            }
+        }
+        &:nth-of-type(even) {
+            justify-content: flex-start;
+            &:after {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                content: '';
+                background-color: #fff;
+                height: 112px;
+                width: 50%;
+                z-index: 2;
+            }
+        }
+        margin-bottom: 140px;
+
+        &__building {
+            @include services-bg-l(
+                $url: '../img/building-img.jpg'
+            )
+        }
+        &__decoration {
+            @include services-bg-r(
+                $url: '../img/decoration-img.jpg'
+            )
+        }
+        &__engineering {
+            @include services-bg-l(
+                $url: '../img/engineering-img.jpg'
+            )
+        }
+        &__landscape {
+            @include services-bg-r(
+                $url: '../img/landscape-img.jpg'
+            )
+        }
+        &__projects {
+            @include services-bg-l(
+                $url: '../img/project-img.jpg'
+            )
+        }
+    }
+    &--text-container {
+        position: relative;
+        background: $gray;
+        width: 50%;
+        text-align: left;
+        padding: 0 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    &--link-toservice {
+        display: inline-block;
+        @include fontGotham(500, 14px, 12px);
+        text-transform: uppercase;
+        padding: 15px 24px;
+        border: 3px solid $gray3;
+        color: $text-color;
+        >span {
+            position: relative;
+            top: 6px;
+            font-family: 'moscowhome';
+            font-size: 25px;
+            line-height: 0;
+            color: $red2;
+        }
+    }
+    &--controls {
+        position: absolute;
+        height: 112px;
+        width: 224px;
+        background-color: $text-color;
+        display: flex;
+        align-items: center;
+        bottom: 0;
+        text-align: center;
+        z-index: 20;
+        a.services--button {
+            color: white;
+            &:hover {
+                color: $red2;
+            }
+        }
+        &__left {
+            left: -112px;
+        }
+        &__right {
+            right: -113px;
+        }
+    }
+    &--button {
+        height: 100%;
+        width: 50%;
+        color: white;
+        font-size: 50px;
+        line-height: 112px;
+        font-family: 'moscowhome';
+        &:first-child {
+            border-right: 1px solid #595959;
+        }
     }
 }
 
