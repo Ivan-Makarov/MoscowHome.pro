@@ -20,6 +20,8 @@ $text-color: $gray4;
 }
 
 .general {
+    margin-right: 0;
+    margin-left: 0;
     &--section {
         padding-top: 100px;
         &__intro {
@@ -87,9 +89,19 @@ $text-color: $gray4;
         padding: 0;
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
         &__from-to {
             justify-content: space-between;
             margin-bottom: 120px;
+        }
+        &__heading-with-text {
+            &.list-cooperation {
+                justify-content: space-around;
+            }
+            &.list-advantages {
+                justify-content: flex-start;
+            }
+
         }
     }
     &--section-list-item {
@@ -99,7 +111,22 @@ $text-color: $gray4;
             line-height: 23px;
             padding: 10px 30px 13px 20px;
         }
+        &__heading-with-text {
+            width: 25%;
+        }
     }
+    &--list-item-heading {
+        display: block;
+        width: 250px;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-bottom: 1px solid $gray3;
+    }
+    &--list-item-text {
+        padding-top: 25px;
+    }
+    // переделать
     &--highlights {
         display: flex;
         justify-content: space-around;
@@ -107,7 +134,11 @@ $text-color: $gray4;
         min-height: 180px;
         color: white;
         list-style: none;
+        position: relative;
+        left: -60px;
+        width: 98.85vw;
     }
+    // ---
     &--highlights-item {
         text-align: center;
         @include fontGotham(500, 15px, 24px);
@@ -118,7 +149,6 @@ $text-color: $gray4;
         margin: 0 auto;
         @include fontGotham(500, 85px, 100px);
         letter-spacing: -0.05em;
-
     }
 }
 
