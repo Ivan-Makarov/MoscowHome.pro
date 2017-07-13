@@ -15,6 +15,10 @@ $text-color: $gray4;
     font: $w #{$s}/#{$lh} 'PlayfairDisplay', Arial, Tahoma, Verdana, sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .content {
     color: $text-color;
 }
@@ -124,7 +128,7 @@ $text-color: $gray4;
         border-bottom: 1px solid $gray3;
     }
     &--list-item-text {
-        padding-top: 25px;
+        padding-top: 15px;
     }
     // переделать
     &--highlights {
@@ -136,7 +140,7 @@ $text-color: $gray4;
         list-style: none;
         position: relative;
         left: -60px;
-        width: 98.85vw;
+        width: 100vw;
     }
     // ---
     &--highlights-item {
