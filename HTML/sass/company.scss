@@ -14,12 +14,6 @@ $text-color: $gray4;
 @mixin fontPlayfair($w, $s, $lh) {
     font: $w #{$s}/#{$lh} 'PlayfairDisplay', Arial, Tahoma, Verdana, sans-serif;
 }
-@mixin item-icon($url, $w: 40px, $h: auto) {
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: $w $h;
-    background-image: url($url);
-}
 @mixin important-icon($url) {
     height: 60px;
     width: 80px;
@@ -40,6 +34,20 @@ $text-color: $gray4;
     background-position: 100% 0;
     background-image: url($url);
 }
+@mixin item-icon($char, $col, $t: 3px, $l: -60px, $h: 50px, $w: 50px, $fz: 40px) {
+    &:before {
+        position: absolute;
+        display: block;
+        top: $t;
+        left: $l;
+        height: $h;
+        width: $w;
+        content: $char;
+        font-family: 'moscowhome';
+        font-size: $fz;
+        color: $col;
+    }
+}
 
 body {
     overflow-x: hidden;
@@ -53,26 +61,30 @@ body {
     margin-right: 20px;
     margin-left: 20px;
     &--section {
-        padding-top: 100px;
+        // padding-top: 100px;
+        img {
+            width: 100%;
+            display: block;
+        }
         &__intro {
-            position: relative;
-            padding-top: 250px;
-            background-image: url('../img/builders2.jpg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: 0 0;
-            z-index: 10;
-            &:after {
-                position: absolute;
-                content: '';
-                top: 250px;
-                left: 0;
-                display: block;
-                z-index: -10;
-                background-color: white;
-                width: 100%;
-                height: 70%;
-            }
+            // position: relative;
+            // padding-top: 250px;
+            // background-image: url('../img/builders2.jpg');
+            // background-repeat: no-repeat;
+            // background-size: contain;
+            // background-position: 0 0;
+            // z-index: 10;
+            // &:after {
+            //     position: absolute;
+            //     content: '';
+            //     top: 250px;
+            //     left: 0;
+            //     display: block;
+            //     z-index: -10;
+            //     background-color: white;
+            //     width: 100%;
+            //     height: 70%;
+            // }
         }
         &:nth-of-type(odd) {
             .general--highlights {
@@ -146,44 +158,6 @@ body {
         &__heading-with-text {
             width: 25%;
         }
-        &__trust {
-            @include item-icon('../img/trust.png');
-        }
-        &__experience {
-            @include item-icon('../img/bag.png');
-        }
-        &__recommendations {
-            @include item-icon('../img/like.png');
-        }
-        &__client {
-            @include item-icon('../img/clients.png')
-        }
-        &__fixprice {
-            @include item-icon('../img/rouble.png')
-        }
-        &__deadline {
-            @include item-icon('../img/calendar.png')
-        }
-        &__quality {
-            @include item-icon('../img/reputation.png')
-        }
-        &__cycle {
-            @include item-icon('../img/ok-hand.png')
-        }
-        &__bureau {
-            @include item-icon(
-                $url: '../img/compass.png',
-                $w: auto,
-                $h: 50px
-            );
-        }
-        &__documents {
-            @include item-icon(
-                $url: '../img/documents.png',
-                $w: auto,
-                $h: 50px
-            )
-        }
     }
     &--list-item-heading {
         position: relative;
@@ -194,6 +168,67 @@ body {
         font-weight: 500;
         line-height: 22px;
         border-bottom: 1px solid $gray3;
+        &__trust {
+            @include item-icon(
+                $char: '\E90F',
+                $col: $gray3
+            );
+        }
+        &__experience {
+            @include item-icon(
+                $char: '\E906',
+                $col: $gray3
+            );
+        }
+        &__recommendations {
+            @include item-icon(
+                $char: '\E914',
+                $col: $gray3
+            );
+        }
+        &__client {
+            @include item-icon(
+                $char: '\E90C',
+                $col: $gray3
+            );
+        }
+        &__fixprice {
+            @include item-icon(
+                $char: '\E918',
+                $col: $gray3
+            );
+        }
+        &__deadline {
+            @include item-icon(
+                $char: '\E908',
+                $col: $gray3
+            );
+        }
+        &__quality {
+            @include item-icon(
+                $char: '\E91B',
+                $col: $gray3,
+                $fz: 45px
+            );
+        }
+        &__cycle {
+            @include item-icon(
+                $char: '\E916',
+                $col: $gray3
+            );
+        }
+        &__bureau {
+            @include item-icon(
+                $char: '\E900',
+                $col: $gray3
+            );
+        }
+        &__documents {
+            @include item-icon(
+                $char: '\E90E',
+                $col: $gray3
+            );
+        }
     }
     &--list-item-text {
         padding-top: 5px;
@@ -227,17 +262,13 @@ body {
         margin: 0 auto;
         @include fontGotham(500, 85px, 100px);
         letter-spacing: -0.05em;
-        &__agency {
-            @include important-icon('../img/real-estate.png');
-            margin-bottom: 10px;
-        }
-        &__buy-sell {
-            @include important-icon('../img/sale.png');
-            margin-bottom: 10px;
-        }
+        &__agency,
+        &__buy-sell,
         &__deals {
-            @include important-icon('../img/safety.png');
+            font-family: 'moscowhome';
             margin-bottom: 10px;
+            font-size: 70px;
+            line-height: 70px;
         }
     }
 }
@@ -324,10 +355,69 @@ body {
         justify-content: center;
         align-items: flex-start;
     }
+    &--section-heading {
+        font-weight: 500;
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 15px;
+        &__building {
+            @include item-icon(
+                $char: '\E904',
+                $col: $red2
+            )
+        }
+        &__decoration {
+            @include item-icon(
+                $char: '\E903',
+                $col: $red2
+            )
+        }
+        &__decoration {
+            @include item-icon(
+                $char: '\E903',
+                $col: $red2
+            )
+        }
+        &__engineering {
+            @include item-icon(
+                $char: '\E901',
+                $col: $red2
+            )
+        }
+        &__landscape {
+            @include item-icon(
+                $char: '\E902',
+                $col: $red2
+            )
+        }
+        &__project {
+            @include item-icon(
+                $char: '\E900',
+                $col: $red2
+            )
+        }
+    }
+    &--section-list {
+        list-style-type: disc;
+        padding-left: 0;
+        margin: 15px 0px 10px 18px;
+    }
+    &--section-list-item {
+        color: $red2;
+        padding-left: -10px;
+        margin-bottom: 10px;
+        >span {
+            color: $text-color;
+        }
+    }
+    &--text {
+        margin: 0;
+    }
     &--link-toservice {
         display: inline-block;
         @include fontGotham(500, 14px, 12px);
         text-transform: uppercase;
+        margin-top: 15px;
         padding: 15px 24px;
         border: 3px solid $gray3;
         color: $text-color;
