@@ -565,6 +565,9 @@ body {
     .general--text {
         width: 100%;
     }
+    .general--section-list__from-to {
+        margin-bottom: 0;
+    }
     .general--section-list__heading-with-text.list-cooperation {
         justify-content: space-between;
     }
@@ -632,6 +635,9 @@ body {
         padding-right: 20px;
         padding-left: 20px;
     }
+    .general--section-list__from-to {
+        margin-bottom: 0;
+    }
     .general--section-list-item {
         width: 100%;
     }
@@ -641,6 +647,7 @@ body {
     }
     .general--section-list-item__heading-with-text {
         padding-left: 0;
+        min-height: 100px;
     }
     .general--list-item-heading__trust:before {
         position: absolute;

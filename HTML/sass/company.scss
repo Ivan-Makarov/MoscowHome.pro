@@ -279,7 +279,6 @@ body {
         background-size: cover;
         &:nth-of-type(odd) {
             justify-content: flex-end;
-
             &:after {
                 position: absolute;
                 display: block;
@@ -467,6 +466,10 @@ body {
         }
 
         &--section-list {
+            &__from-to {
+                margin-bottom: 0;
+            }
+
             &__heading-with-text {
                 &.list-cooperation {
                     justify-content: space-between;
@@ -554,6 +557,9 @@ body {
             display: block;
             padding-right: 20px;
             padding-left: 20px;
+            &__from-to {
+                margin-bottom: 0;
+            }
         }
 
         &--section-list-item {
@@ -566,6 +572,7 @@ body {
 
             &__heading-with-text {
                 padding-left: 0;
+                min-height: 100px;
             }
         }
 
