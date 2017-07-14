@@ -380,10 +380,8 @@ body {
 
     &--section-list-item {
         color: $red2;
-        padding-left: -10px;
         margin-bottom: 10px;
-
-        > span {
+        >span {
             color: $text-color;
         }
     }
@@ -539,13 +537,12 @@ body {
             text-align: left;
             margin-left: 20px;
             margin-left: 20px;
-
         }
 
         &--text {
             width: 100%;
-            margin-left: 20px;
-            margin-left: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
             &:first-of-type {
                 &:before {
                     width: 100%;
