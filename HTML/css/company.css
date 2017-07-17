@@ -379,9 +379,11 @@ body {
 
 .services .swiper-container .swiper-button {
     display: none;
+    width: auto;
+    text-align: center;
     font-family: 'moscowhome';
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 50px;
+    line-height: 50px;
     color: #fff;
     background-image: none;
 }
