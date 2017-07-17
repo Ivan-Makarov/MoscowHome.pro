@@ -20,16 +20,9 @@ $text-color: $gray4;
     background-image: url($url);
     background-position: 50% 0;
 }
-@mixin services-bg-l($url, $w: 55%, $h: auto) {
+@mixin services-bg ($url) {
     background-repeat: no-repeat;
-    background-size: $w $h;
-    background-position: 0 0;
-    background-image: url($url);
-}
-@mixin services-bg-r($url, $w: 55%, $h: auto) {
-    background-repeat: no-repeat;
-    background-size: $w $h;
-    background-position: 100% 0;
+    background-position: center;
     background-image: url($url);
 }
 @mixin item-icon($char, $col, $t: 3px, $l: -60px, $h: 50px, $w: 50px, $fz: 40px) {
@@ -274,57 +267,44 @@ body {
         position: relative;
         min-height: 550px;
         display: flex;
-        background-size: cover;
         &:nth-of-type(odd) {
-            justify-content: flex-end;
-            &:after {
-                position: absolute;
-                display: block;
-                bottom: 0;
-                left: 0;
-                content: '';
-                background-color: #fff;
-                height: 112px;
-                width: 50%;
-            }
         }
 
         &:nth-of-type(even) {
             justify-content: flex-start;
-
-            &:after {
-                position: absolute;
-                display: block;
-                bottom: 0;
-                right: 0;
-                content: '';
-                background-color: #fff;
-                height: 112px;
-                width: 50%;
-                z-index: 2;
-            }
+            flex-direction: row-reverse;
         }
         margin-bottom: 140px;
+    }
 
+    &--item-current-img {
+        width: 50%;
+        background-size: cover;
+        background-clip: content-box;
+        padding-bottom: 112px;
         &__building {
-            @include services-bg-l( $url: '../img/building-img.jpg' )
+            @include services-bg( $url: '../img/building-img.jpg' )
         }
 
         &__decoration {
-            @include services-bg-r( $url: '../img/decoration-img.jpg' )
+            @include services-bg( $url: '../img/decoration-img.jpg' )
         }
 
         &__engineering {
-            @include services-bg-l( $url: '../img/engineering-img.jpg' )
+            @include services-bg( $url: '../img/engineering-img.jpg' )
         }
 
         &__landscape {
-            @include services-bg-r( $url: '../img/landscape-img.jpg' )
+            @include services-bg( $url: '../img/landscape-img.jpg' )
         }
 
-        &__projects {
-            @include services-bg-l( $url: '../img/project-img.jpg' )
+        &__project {
+            @include services-bg( $url: '../img/project-img.jpg' )
         }
+    }
+
+    &--item-next-img {
+        display: none;
     }
 
     &--text-container {
@@ -388,6 +368,12 @@ body {
 
     &--text {
         margin: 0;
+    }
+
+    &--link-list {
+        list-style: none;
+        margin-top: 15px;
+        padding: 0;
     }
 
     &--link-toservice {
@@ -502,22 +488,31 @@ body {
         &--item {
             display: block;
             margin-bottom: 60px;
-            padding-top: 430px;
-            background-position: 0 0;
-            background-size: 150%;
+        }
 
-            &:nth-of-type(even),
-            &:nth-of-type(odd) {
-                &:after {
-                    display: none;
-                }
-            }
+        &--item-current-img {
+            height: 430px;
+            width: 100%;
+            padding-bottom: 0;
         }
 
         &--text-container {
             width: 100%;
             padding-left: 25%;
             padding-right: 25%;
+        }
+
+        &--item-next-img {
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            height: 430px;
+            width: 100%;
+            top: 0px;
+            left: 95%;
+            background-repeat: no-repeat;
+            background-position: 10px 0;
+            background-image: url('../img/decoration-img.jpg');
         }
 
         &--controls {
@@ -629,15 +624,25 @@ body {
         &--item {
             display: block;
             margin-bottom: 60px;
-            padding-top: 160px;
-            background-position: 0 0;
-            background-size: contain;
-            &:nth-of-type(even),
-            &:nth-of-type(odd) {
-                &:after {
-                    display: none;
-                }
-            }
+        }
+
+        &--item-current-img {
+            height: 160px;
+            width: 100%;
+            padding-bottom: 0;
+        }
+
+        &--item-next-img {
+            position: absolute;
+            display: block;
+            background-color: #fff;
+            height: 160px;
+            width: 100%;
+            top: 0px;
+            left: 93%;
+            background-repeat: no-repeat;
+            background-position: 5px 0;
+            background-image: url('../img/decoration-img.jpg');
         }
 
         &--text-container {

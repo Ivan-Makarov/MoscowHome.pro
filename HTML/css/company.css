@@ -309,74 +309,53 @@ body {
     position: relative;
     min-height: 550px;
     display: flex;
-    background-size: cover;
     margin-bottom: 140px;
-}
-
-.services--item:nth-of-type(odd) {
-    justify-content: flex-end;
-}
-
-.services--item:nth-of-type(odd):after {
-    position: absolute;
-    display: block;
-    bottom: 0;
-    left: 0;
-    content: '';
-    background-color: #fff;
-    height: 112px;
-    width: 50%;
 }
 
 .services--item:nth-of-type(even) {
     justify-content: flex-start;
+    flex-direction: row-reverse;
 }
 
-.services--item:nth-of-type(even):after {
-    position: absolute;
-    display: block;
-    bottom: 0;
-    right: 0;
-    content: '';
-    background-color: #fff;
-    height: 112px;
+.services--item-current-img {
     width: 50%;
-    z-index: 2;
+    background-size: cover;
+    background-clip: content-box;
+    padding-bottom: 112px;
 }
 
-.services--item__building {
+.services--item-current-img__building {
     background-repeat: no-repeat;
-    background-size: 55% auto;
-    background-position: 0 0;
+    background-position: center;
     background-image: url("../img/building-img.jpg");
 }
 
-.services--item__decoration {
+.services--item-current-img__decoration {
     background-repeat: no-repeat;
-    background-size: 55% auto;
-    background-position: 100% 0;
+    background-position: center;
     background-image: url("../img/decoration-img.jpg");
 }
 
-.services--item__engineering {
+.services--item-current-img__engineering {
     background-repeat: no-repeat;
-    background-size: 55% auto;
-    background-position: 0 0;
+    background-position: center;
     background-image: url("../img/engineering-img.jpg");
 }
 
-.services--item__landscape {
+.services--item-current-img__landscape {
     background-repeat: no-repeat;
-    background-size: 55% auto;
-    background-position: 100% 0;
+    background-position: center;
     background-image: url("../img/landscape-img.jpg");
 }
 
-.services--item__projects {
+.services--item-current-img__project {
     background-repeat: no-repeat;
-    background-size: 55% auto;
-    background-position: 0 0;
+    background-position: center;
     background-image: url("../img/project-img.jpg");
+}
+
+.services--item-next-img {
+    display: none;
 }
 
 .services--text-container {
@@ -495,6 +474,12 @@ body {
     margin: 0;
 }
 
+.services--link-list {
+    list-style: none;
+    margin-top: 15px;
+    padding: 0;
+}
+
 .services--link-toservice {
     display: inline-block;
     font: 500 14px/20px "GothamPro", Arial, Tahoma, Verdana, sans-serif;
@@ -589,18 +574,28 @@ body {
     .services--item {
         display: block;
         margin-bottom: 60px;
-        padding-top: 430px;
-        background-position: 0 0;
-        background-size: 150%;
     }
-    .services--item:nth-of-type(even):after,
-    .services--item:nth-of-type(odd):after {
-        display: none;
+    .services--item-current-img {
+        height: 430px;
+        width: 100%;
+        padding-bottom: 0;
     }
     .services--text-container {
         width: 100%;
         padding-left: 25%;
         padding-right: 25%;
+    }
+    .services--item-next-img {
+        position: absolute;
+        display: block;
+        background-color: #fff;
+        height: 430px;
+        width: 100%;
+        top: 0px;
+        left: 95%;
+        background-repeat: no-repeat;
+        background-position: 10px 0;
+        background-image: url("../img/decoration-img.jpg");
     }
     .services--controls {
         display: none;
@@ -778,13 +773,23 @@ body {
     .services--item {
         display: block;
         margin-bottom: 60px;
-        padding-top: 160px;
-        background-position: 0 0;
-        background-size: contain;
     }
-    .services--item:nth-of-type(even):after,
-    .services--item:nth-of-type(odd):after {
-        display: none;
+    .services--item-current-img {
+        height: 160px;
+        width: 100%;
+        padding-bottom: 0;
+    }
+    .services--item-next-img {
+        position: absolute;
+        display: block;
+        background-color: #fff;
+        height: 160px;
+        width: 100%;
+        top: 0px;
+        left: 93%;
+        background-repeat: no-repeat;
+        background-position: 5px 0;
+        background-image: url("../img/decoration-img.jpg");
     }
     .services--text-container {
         display: block;
