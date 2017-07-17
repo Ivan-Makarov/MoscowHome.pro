@@ -360,38 +360,6 @@ body {
         }
     }
 
-    // &--item-next-img {
-    //     background-size: cover;
-    //     background-clip: content-box;
-    //     padding-bottom: 112px;
-    // }
-    //
-    // &--item-current-img {
-    //     // width: 50%;
-    //     background-size: cover;
-    //     background-clip: content-box;
-    //     padding-bottom: 112px;
-    //     &__building {
-    //         @include services-bg( $url: '../img/building-img.jpg' )
-    //     }
-    //
-    //     &__decoration {
-    //         @include services-bg( $url: '../img/decoration-img.jpg' )
-    //     }
-    //
-    //     &__engineering {
-    //         @include services-bg( $url: '../img/engineering-img.jpg' )
-    //     }
-    //
-    //     &__landscape {
-    //         @include services-bg( $url: '../img/landscape-img.jpg' )
-    //     }
-    //
-    //     &__project {
-    //         @include services-bg( $url: '../img/project-img.jpg' )
-    //     }
-    // }
-
     &--text-container {
         position: relative;
         background: $gray;
