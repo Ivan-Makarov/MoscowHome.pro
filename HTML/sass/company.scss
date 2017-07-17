@@ -20,6 +20,7 @@ $text-color: $gray4;
     background-image: url($url);
     background-position: 50% 0;
 }
+
 @mixin services-bg ($url) {
     background-repeat: no-repeat;
     background-position: center;
@@ -268,44 +269,128 @@ body {
         min-height: 550px;
         display: flex;
         &:nth-of-type(odd) {
+            .swiper-controls {
+                right: -113px;
+            }
         }
 
         &:nth-of-type(even) {
-            justify-content: flex-start;
             flex-direction: row-reverse;
+            .swiper-controls {
+                left: -112px;
+            }
         }
         margin-bottom: 140px;
-    }
-
-    &--item-current-img {
-        width: 50%;
-        background-size: cover;
-        background-clip: content-box;
-        padding-bottom: 112px;
         &__building {
-            @include services-bg( $url: '../img/building-img.jpg' )
+            .swiper-slide {
+                &__building {
+                    background-image: url('../img/building-img.jpg');
+                }
+                &__decoration {
+                    background-image: url('../img/decoration-img.jpg');
+                }
+            }
         }
 
         &__decoration {
-            @include services-bg( $url: '../img/decoration-img.jpg' )
+            .swiper-slide {
+                &__decoration {
+                    background-image: url('../img/decoration-img.jpg');
+                }
+                &__engineering {
+                    background-image: url('../img/engineering-img.jpg');
+                }
+            }
         }
 
         &__engineering {
-            @include services-bg( $url: '../img/engineering-img.jpg' )
+            .swiper-slide {
+                &__engineering {
+                    background-image: url('../img/engineering-img.jpg');
+                }
+                &__landscape {
+                    background-image: url('../img/landscape-img.jpg');
+                }
+            }
         }
 
         &__landscape {
-            @include services-bg( $url: '../img/landscape-img.jpg' )
+            .swiper-slide {
+                &__landscape {
+                    background-image: url('../img/landscape-img.jpg');
+                }
+                &__project {
+                    background-image: url('../img/project-img.jpg');
+                }
+            }
         }
 
         &__project {
-            @include services-bg( $url: '../img/project-img.jpg' )
+            .swiper-slide {
+                &__project {
+                    background-image: url('../img/project-img.jpg');
+                }
+                &__building {
+                    background-image: url('../img/building-img.jpg');
+                }
+            }
         }
     }
 
-    &--item-next-img {
-        display: none;
+    .swiper-container {
+        width: 50%;
+        position: relative;
+        .swiper-slide {
+            padding-bottom: 112px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-clip: content-box;
+        }
+        .swiper-button {
+            display: none;
+            font-family: 'moscowhome';
+            font-size: 40px;
+            line-height: 40px;
+            color: #fff;
+            background-image: none;
+            &:hover {
+                color: $red2;
+            }
+        }
     }
+
+    // &--item-next-img {
+    //     background-size: cover;
+    //     background-clip: content-box;
+    //     padding-bottom: 112px;
+    // }
+    //
+    // &--item-current-img {
+    //     // width: 50%;
+    //     background-size: cover;
+    //     background-clip: content-box;
+    //     padding-bottom: 112px;
+    //     &__building {
+    //         @include services-bg( $url: '../img/building-img.jpg' )
+    //     }
+    //
+    //     &__decoration {
+    //         @include services-bg( $url: '../img/decoration-img.jpg' )
+    //     }
+    //
+    //     &__engineering {
+    //         @include services-bg( $url: '../img/engineering-img.jpg' )
+    //     }
+    //
+    //     &__landscape {
+    //         @include services-bg( $url: '../img/landscape-img.jpg' )
+    //     }
+    //
+    //     &__project {
+    //         @include services-bg( $url: '../img/project-img.jpg' )
+    //     }
+    // }
 
     &--text-container {
         position: relative;
@@ -317,7 +402,6 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-
     }
 
     &--section-heading {
@@ -328,10 +412,6 @@ body {
 
         &__building {
             @include item-icon( $char: '\E904', $col: $red2 )
-        }
-
-        &__decoration {
-            @include item-icon( $char: '\E903', $col: $red2 )
         }
 
         &__decoration {
@@ -397,6 +477,8 @@ body {
 
     &--controls {
         position: absolute;
+        left: 50%;
+        margin-left: -112px;
         height: 112px;
         width: 224px;
         background-color: $text-color;
@@ -405,22 +487,6 @@ body {
         bottom: 0;
         text-align: center;
         z-index: 20;
-
-        a.services--button {
-            color: white;
-
-            &:hover {
-                color: $red2;
-            }
-        }
-
-        &__left {
-            left: -112px;
-        }
-
-        &__right {
-            right: -113px;
-        }
     }
 
     &--button {
@@ -430,7 +496,10 @@ body {
         font-size: 50px;
         line-height: 112px;
         font-family: 'moscowhome';
-
+        &:hover {
+            cursor: pointer;
+            color: $red2;
+        }
         &:first-child {
             border-right: 1px solid #595959;
         }
@@ -490,10 +559,15 @@ body {
             margin-bottom: 60px;
         }
 
-        &--item-current-img {
-            height: 430px;
+        .swiper-container {
             width: 100%;
-            padding-bottom: 0;
+            height: 430px;
+            .swiper-slide {
+                padding-bottom: 0;
+            }
+            .swiper-button {
+                display: block;
+            }
         }
 
         &--text-container {
@@ -502,18 +576,6 @@ body {
             padding-right: 25%;
         }
 
-        &--item-next-img {
-            position: absolute;
-            display: block;
-            background-color: #fff;
-            height: 430px;
-            width: 100%;
-            top: 0px;
-            left: 95%;
-            background-repeat: no-repeat;
-            background-position: 10px 0;
-            background-image: url('../img/decoration-img.jpg');
-        }
 
         &--controls {
             display: none;
@@ -555,7 +617,6 @@ body {
         }
 
         &--section-list-item {
-
             width: 100%;
             &__from-to {
                 min-height: 80px;
@@ -626,23 +687,15 @@ body {
             margin-bottom: 60px;
         }
 
-        &--item-current-img {
-            height: 160px;
+        .swiper-container {
             width: 100%;
-            padding-bottom: 0;
-        }
-
-        &--item-next-img {
-            position: absolute;
-            display: block;
-            background-color: #fff;
             height: 160px;
-            width: 100%;
-            top: 0px;
-            left: 93%;
-            background-repeat: no-repeat;
-            background-position: 5px 0;
-            background-image: url('../img/decoration-img.jpg');
+            .swiper-slide {
+                padding-bottom: 0;
+            }
+            .swiper-button {
+                display: block;
+            }
         }
 
         &--text-container {

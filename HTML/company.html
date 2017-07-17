@@ -41,9 +41,12 @@
 		<link rel="stylesheet" href="css/footer.css?120720171500" type="text/css" />
 		<link rel="stylesheet" href="css/animate.css?120720171500" type="text/css" />
 		<link rel="stylesheet" href="css/company.css?120720171500" type="text/css" />
+		<link rel="stylesheet" href="css/swiper.min.css">
 		<script defer src="js/jquery.js?120720171500" type="text/javascript"></script>
 		<script defer src="js/inputmask.js?120720171500" type="text/javascript"></script>
 		<script defer src="js/base.js?120720171500" type="text/javascript"></script>
+		<script defer src="js/swiper.jquery.min.js"></script>
+		<script defer src="js/swiper-init.js"></script>
 		<title>HTTP 404 :: Moscow Home</title>
 	</head>
 	<body onresize="resize();" onload="resize();">
@@ -292,8 +295,14 @@
 						<p class="services--subheading">Moscow Home обладает многолетним опытом строительства домов премиум класса. Мы строим дома, которые отражают статус своего хозяина, подчёркивают его вкус и увлечения</p>
 
 						<div class="services--item services--item__building">
-							<div class="services--item-current-img services--item-current-img__building"></div>
-							<div class="services--item-next-img"></div>
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide swiper-slide__building"></div>
+									<div class="swiper-slide swiper-slide__decoration"></div>
+								</div>
+								<div class="swiper-button swiper-button-prev">&#xEA43;</div>
+								<div class="swiper-button swiper-button-next">&#xEA42;</div>
+							</div>
 							<div class="services--text-container">
 								<h3 class="services--section-heading services--section-heading__building">Строительство домов</h3>
 								<p class="services--text">Основа дома — это фундамент, наши специалисты помогут сконструировать (ленточный, монолитно — свайный, монолитный/плитный фундамент) и выполнить строительство домов любой сложности:</p>
@@ -308,17 +317,22 @@
 									<li class="services--link-list-item"><a href="">Монтаж окон и входных групп</a></li>
 								</ul>
 								<a href="" class="services--link-toservice">Перейти к услуге<span>&#xEA42;</span></a>
-								<div class="services--controls services--controls__left">
-									<a href="" class="services--button">&#xEA43;</a>
-									<a href="" class="services--button">&#xEA42;</a>
-								</div>
 							</div>
-
+							<div class="services--controls">
+								<div class="services--button services--button__prev">&#xEA43;</div>
+								<div class="services--button services--button__next">&#xEA42;</div>
+							</div>
 						</div>
 
 						<div class="services--item services--item__decoration">
-							<div class="services--item-current-img services--item-current-img__decoration"></div>
-							<div class="services--item-next-img"></div>
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide swiper-slide__decoration"></div>
+									<div class="swiper-slide swiper-slide__engineering"></div>
+								</div>
+								<div class="swiper-button swiper-button-prev">&#xEA43;</div>
+								<div class="swiper-button swiper-button-next">&#xEA42;</div>
+							</div>
 							<div class="services--text-container">
 								<h3 class="services--section-heading services--section-heading__decoration">Комплексная Отделка</h3>
 								<ul class="services--section-list">
@@ -327,16 +341,23 @@
 									<li class="services--section-list-item"><span>Комплексная уборка дома перед сдачей</span></li>
 								</ul>
 								<a href="" class="services--link-toservice">Перейти к услуге<span>&#xEA42;</span></a>
-								<div class="services--controls services--controls__right">
-									<a href="" class="services--button">&#xEA43;</a>
-									<a href="" class="services--button">&#xEA42;</a>
-								</div>
+
+							</div>
+							<div class="services--controls">
+								<div class="services--button services--button__prev">&#xEA43;</div>
+								<div class="services--button services--button__next">&#xEA42;</div>
 							</div>
 						</div>
 
 						<div class="services--item services--item__engineering">
-							<div class="services--item-current-img services--item-current-img__engineering"></div>
-							<div class="services--item-next-img"></div>
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide swiper-slide__engineering"></div>
+									<div class="swiper-slide swiper-slide__landscape"></div>
+								</div>
+								<div class="swiper-button swiper-button-prev">&#xEA43;</div>
+								<div class="swiper-button swiper-button-next">&#xEA42;</div>
+							</div>
 							<div class="services--text-container">
 								<h3 class="services--section-heading services--section-heading__engineering">Инженерные системы</h3>
 								<ul class="services--section-list">
@@ -346,16 +367,23 @@
 									<li class="services--section-list-item"><span>Монтаж системы «Умный дом»</span></li>
 								</ul>
 								<a href="" class="services--link-toservice">Перейти к услуге <span>&#xEA42;</span></a>
-								<div class="services--controls services--controls__left">
-									<a href="" class="services--button">&#xEA43;</a>
-									<a href="" class="services--button">&#xEA42;</a>
-								</div>
+
+							</div>
+							<div class="services--controls">
+								<div class="services--button services--button__prev">&#xEA43;</div>
+								<div class="services--button services--button__next">&#xEA42;</div>
 							</div>
 						</div>
 
 						<div class="services--item services--item__landscape">
-							<div class="services--item-current-img services--item-current-img__landscape"></div>
-							<div class="services--item-next-img"></div>
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide swiper-slide__landscape"></div>
+									<div class="swiper-slide swiper-slide__project"></div>
+								</div>
+								<div class="swiper-button swiper-button-prev">&#xEA43;</div>
+								<div class="swiper-button swiper-button-next">&#xEA42;</div>
+							</div>
 							<div class="services--text-container">
 								<h3 class="services--section-heading services--section-heading__landscape">Ландшафтные работы</h3>
 								<ul class="services--section-list">
@@ -372,16 +400,24 @@
 									<li class="services--section-list-item"><span>Уход за садом, парками, приусадебными зонами</span></li>
 								</ul>
 								<a href="" class="services--link-toservice">Перейти к услуге<span>&#xEA42;</span></a>
-								<div class="services--controls services--controls__right">
-									<a href="" class="services--button">&#xEA43;</a>
-									<a href="" class="services--button">&#xEA42;</a>
-								</div>
+
+							</div>
+							<div class="services--controls">
+								<div class="services--button services--button__prev">&#xEA43;</div>
+								<div class="services--button services--button__next">&#xEA42;</div>
 							</div>
 						</div>
 
 						<div class="services--item services--item__project">
-							<div class="services--item-current-img services--item-current-img__project"></div>
-							<div class="services--item-next-img"></div>
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide swiper-slide__project"></div>
+									<div class="swiper-slide swiper-slide__building"></div>
+								</div>
+								<div class="swiper-button swiper-button-prev">&#xEA43;</div>
+								<div class="swiper-button swiper-button-next">&#xEA42;</div>
+
+							</div>
 							<div class="services--text-container">
 								<h3 class="services--section-heading services--section-heading__project">Проектирование</h3>
 								<ul class="services--section-list">
@@ -394,10 +430,10 @@
 									<li class="services--section-list-item"><span>Ландшафтное проектирование частных объектов, КП, общественных парковых зон</span></li>
 								</ul>
 								<a href="" class="services--link-toservice">Перейти к услуге<span>&#xEA42;</span></a>
-								<div class="services--controls services--controls__left">
-									<a href="" class="services--button">&#xEA43;</a>
-									<a href="" class="services--button">&#xEA42;</a>
-								</div>
+							</div>
+							<div class="services--controls">
+								<div class="services--button services--button__prev">&#xEA43;</div>
+								<div class="services--button services--button__next">&#xEA42;</div>
 							</div>
 						</div>
 					</section>
